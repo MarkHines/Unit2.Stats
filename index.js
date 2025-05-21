@@ -3,7 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
@@ -11,15 +11,24 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0 
+  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+    sum = sum + numbers[indexNumber];
+  }
+  return sum 
 }
-
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  let sum = 0 
+  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+    sum = sum + numbers[indexNumber];
+    // console.log(numbers.length);
+    newSum = sum / numbers.length;
+  }
+  return newSum
 }
 
 /**
@@ -27,7 +36,8 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let smallest = Math.min(...numbers);
+  return smallest;
 }
 
 /**
@@ -35,7 +45,8 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let largest =  Math.max(...numbers);
+  return largest;
 }
 
 /**
@@ -43,7 +54,8 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  let range = Math.max(...numbers) - Math.min(...numbers);
+  return range;
 }
 
 /**
@@ -51,7 +63,13 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  const listOfEven =[];
+  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+    if (numbers[indexNumber] % 2 === 0) {
+      listOfEven.push(numbers[indexNumber]);
+    }
+  }
+  return listOfEven;
 }
 
 /**
@@ -59,7 +77,13 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  const listOfOdd =[];
+  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+    if (numbers[indexNumber] % 2 !== 0) {
+      listOfOdd.push(numbers[indexNumber]);
+    }
+  }
+  return listOfOdd;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
