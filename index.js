@@ -12,7 +12,7 @@ function getLength(numbers) {
  */
 function getSum(numbers) {
   let sum = 0 
-  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+  for (let indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
     sum = sum + numbers[indexNumber];
   }
   return sum 
@@ -22,13 +22,11 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  let sum = 0 
-  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
-    sum = sum + numbers[indexNumber];
-    // console.log(numbers.length);
-    newSum = sum / numbers.length;
-  }
-  return newSum
+
+  // Use previous functions to create new variables
+  const total = getSum(numbers);
+  const mean = total / getLength(numbers);
+  return mean;
 }
 
 /**
@@ -36,8 +34,15 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  let smallest = Math.min(...numbers);
-  return smallest;
+  // let smallest = Math.min(...numbers);
+  // return smallest;
+  let smallest = numbers[0]; 
+
+  for (let i = 0; i < numbers.length; i++){
+    if(numbers[i] < smallest){
+      smallest = numbers[i];
+    }
+  } return smallest;
 }
 
 /**
@@ -45,8 +50,15 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  let largest =  Math.max(...numbers);
-  return largest;
+  // let largest =  Math.max(...numbers);
+  // return largest;
+  let largest = numbers[0];
+
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] > largest) {
+      largest = numbers[i];
+    }
+  } return largest;
 }
 
 /**
@@ -54,7 +66,7 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  let range = Math.max(...numbers) - Math.min(...numbers);
+  const range = getMax(numbers) - getMin(numbers);
   return range;
 }
 
@@ -64,7 +76,7 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
   const listOfEven =[];
-  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+  for (let indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
     if (numbers[indexNumber] % 2 === 0) {
       listOfEven.push(numbers[indexNumber]);
     }
@@ -78,7 +90,7 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
   const listOfOdd =[];
-  for (indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
+  for (let indexNumber = 0; indexNumber < numbers.length; indexNumber = indexNumber + 1){
     if (numbers[indexNumber] % 2 !== 0) {
       listOfOdd.push(numbers[indexNumber]);
     }
